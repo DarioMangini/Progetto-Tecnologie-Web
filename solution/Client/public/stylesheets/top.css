@@ -1,0 +1,98 @@
+/*
+ * Navbar and Footer Styles
+ *
+ * This stylesheet provides styling for the navigation bar and footer,
+ * ensuring a visually consistent design across the top-rated movies page.
+ * It also defines the layout and appearance of movie cards.
+ *
+ * This file is shared between the "Latest Movies" and "Top Movies" pages,
+ * ensuring consistency in the UI across both sections.
+ */
+
+/* Navbar Styling */
+nav.navbar {
+    background-color: #343a40; /* Dark gray background for contrast */
+}
+
+nav.navbar .nav-link {
+    font-size: 1.2rem; /* Increases text size for better readability */
+    text-align: center;
+    flex: 1; /* Ensures uniform distribution of navbar links */
+}
+
+/* Ensures the footer remains at the bottom of the page */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Movies Section (Used in both Latest and Top Movies pages) */
+#topMovies {
+    display: flex;
+    flex-wrap: wrap; /* Allows movie cards to wrap dynamically */
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Movie Card Styling */
+#topMovies .movie-card {
+    flex: 1 1 calc(33.333% - 20px); /* Defines a three-column layout */
+    max-width: calc(33.333% - 20px); /* Ensures equal card width */
+    background-color: #f8f9fa; /* Light background for contrast */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Ensures vertical alignment */
+    transition: transform 0.3s ease-in-out;
+}
+
+#topMovies .movie-card:hover {
+    transform: scale(1.02); /* Subtle hover effect */
+}
+
+/* Ensures movie poster images fit properly */
+#topMovies img {
+    width: 100%; /* Makes image fill the card width */
+    height: auto; /* Maintains aspect ratio */
+    display: block;
+    aspect-ratio: 2/3; /* Keeps standard movie poster proportions */
+    object-fit: cover; /* Prevents distortion while filling the container */
+}
+
+/* Movie Card Details Styling */
+#topMovies .movie-details {
+    padding: 15px;
+    flex-grow: 1; /* Ensures the text section expands properly */
+}
+
+#topMovies .movie-details h5 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#topMovies .movie-details p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Movie Rating Styling */
+#topMovies .movie-rating {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #28a745; /* Green color to highlight positive ratings */
+    margin-top: 10px;
+}
+
+/* Footer Styling */
+body > footer {
+    margin-top: auto;
+}
+
+footer {
+    margin-top: auto; /* Ensures the footer stays at the bottom */
+}
